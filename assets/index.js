@@ -1,8 +1,8 @@
 const breedSelect = document.getElementById('breed-select');
 const dogImage = document.getElementById('dog-image');
 const description = document.getElementById('description');
-const searchInput = document.getElementById('search-input');
-const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('filter-input');
+const searchButton = document.getElementById('filter-button');
 const likeButton = document.getElementById('like-button');
 const detailsButton = document.getElementById('details-button');
 const bredFor = document.getElementById('bred-for');
@@ -17,7 +17,7 @@ function fetchBreeds() {
     fetch(dogApi)
     .then(response => response.json())
     .then(data => {
-        // Populate select options with dog breeds
+        // Populate Dropdown menu with dog breeds
         data.forEach(breed => {
             const option = document.createElement('option');
             option.value = breed.id;
@@ -46,10 +46,10 @@ function fetchBreedDescription(breedName) {
       .then(response => response.json())
       .then(data => {
         if (data.extract) {
-          // Display Wikipedia excerpt if available
+          // Display Wikipedia description
           description.textContent = data.extract;
         } else {
-          description.textContent = 'No description found on Wikipedia.';
+          description.textContent = 'Whoops! Don\'t really know much about this little guy.';
         }
       })
 }
@@ -58,20 +58,20 @@ function fetchBreedDescription(breedName) {
 breedSelect.addEventListener('change', () => {
     const selectedBreedId = breedSelect.value;
     if (selectedBreedId) {
-        fetchBreedDescription(breedSelect.options[breedSelect.selectedIndex].text); // Pass breed name
+        fetchBreedDescription(breedSelect.options[breedSelect.selectedIndex].text);
         fetchRandomImage(selectedBreedId);
-        hideDogFacts(); // Hide dog facts when a new breed is selected
+        hideDogFacts();
         
         // Check if the breed is not liked and set the like button's color accordingly
         if (!likedBreeds.includes(breedSelect.options[breedSelect.selectedIndex].text)) {
-            likeButton.classList.remove('liked'); // Remove 'liked' class from heart button
-            likeButton.classList.remove('fas'); // Remove solid heart
-            likeButton.classList.add('far'); // Add outline heart
+            likeButton.classList.remove('liked'); 
+            likeButton.classList.remove('fas');
+            likeButton.classList.add('far');
         } else {
             // If the breed is liked, set the like button's color to liked state
-            likeButton.classList.add('liked'); // Add 'liked' class to heart button
-            likeButton.classList.remove('far'); // Remove outline heart
-            likeButton.classList.add('fas'); // Add solid heart
+            likeButton.classList.add('liked');
+            likeButton.classList.remove('far');
+            likeButton.classList.add('fas'); 
         }
     } else {
         // Clear image and description if no breed is selected
@@ -79,26 +79,24 @@ breedSelect.addEventListener('change', () => {
         description.textContent = '';
 
         // Change like button's color back to unliked state
-        likeButton.classList.remove('liked'); // Remove 'liked' class from heart button
-        likeButton.classList.remove('fas'); // Remove solid heart
-        likeButton.classList.add('far'); // Add outline heart
+        likeButton.classList.remove('liked');
+        likeButton.classList.remove('fas'); 
+        likeButton.classList.add('far'); 
     }
 });
-
 
 // Event listener for search button
 searchButton.addEventListener('click', () => {
     const searchQuery = searchInput.value.trim();
     if (searchQuery !== '') {
         // Clear previous options
-        breedSelect.innerHTML = '<option value="">Select a Breed</option>';
-
+        breedSelect.innerHTML = '<option value="">Choose a Breed</option>';
         fetch(dogApi)
         .then(response => response.json())
         .then(data => {
             // Filter breeds based on search query
             const filteredBreeds = data.filter(breed => breed.name.toLowerCase().includes(searchQuery.toLowerCase()));
-            // Populate select options with filtered dog breeds
+            // Populate Dropdown menu with filtered dog breeds
             filteredBreeds.forEach(breed => {
                 const option = document.createElement('option');
                 option.value = breed.id;
@@ -123,7 +121,6 @@ function fetchBreedDetails(breedId) {
         .then(data => {
             // Extract relevant details
             const { bred_for, life_span, temperament } = data;
-
             // Display the fetched details
             bredFor.textContent = `Bred for: ${bred_for}`;
             lifeSpan.textContent = `Life span: ${life_span}`;
@@ -138,7 +135,7 @@ function hideDogFacts() {
     bredFor.textContent = '';
     lifeSpan.textContent = '';
     temper.textContent = '';
-    document.getElementById('details-section').style.display = 'none'; // Hide the
+    document.getElementById('details-section').style.display = 'none';
 }
 
 // Event listener for details button click that also hides dog facts if no breed is selected
@@ -154,20 +151,19 @@ detailsButton.addEventListener('click', () => {
 // Event listener for like button click
 likeButton.addEventListener('click', () => {
     const selectedBreedName = breedSelect.options[breedSelect.selectedIndex].text;
-    
     // Check if the selected breed is not the default "Choose a Breed" option
     if (selectedBreedName !== "Choose a Breed") {
         if (!likedBreeds.includes(selectedBreedName)) {
             // Add breed to liked breeds list
             likedBreeds.push(selectedBreedName);
-            likeButton.classList.add('liked'); // Add 'liked' class to heart button
-            likeButton.classList.remove('far'); // Remove outline heart
-            likeButton.classList.add('fas'); // Add solid heart
+            likeButton.classList.add('liked'); 
+            likeButton.classList.remove('far'); 
+            likeButton.classList.add('fas'); 
         } else {
             likedBreeds = likedBreeds.filter(breed => breed !== selectedBreedName);
-            likeButton.classList.remove('liked'); // Remove 'liked' class from heart button
-            likeButton.classList.remove('fas'); // Remove solid heart
-            likeButton.classList.add('far'); // Add outline heart
+            likeButton.classList.remove('liked'); 
+            likeButton.classList.remove('fas'); 
+            likeButton.classList.add('far'); 
         }
 
         // Update liked breeds list in the UI
@@ -177,7 +173,7 @@ likeButton.addEventListener('click', () => {
 
 // Function to update the liked breeds list in the UI
 function updateLikedBreedsList() {
-    likedBreedsList.innerHTML = ''; // Clear previous list
+    likedBreedsList.innerHTML = '';
     likedBreeds.forEach(breed => {
         const listItem = document.createElement('li');
         listItem.textContent = breed;

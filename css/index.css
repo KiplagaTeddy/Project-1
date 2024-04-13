@@ -26,15 +26,15 @@ body {
 
 /* Title Styles */
 #title {
-    font-family: 'Pacifico', cursive; /* Unique font */
+    font-family: 'Pacifico', cursive;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #036303; /* Neon color */
-    text-shadow: 0 0 10px #2dfcbe, 0 0 20px #51f868, 0 0 30px #6bffb5, 0 0 40px #6bffd3, 0 0 50px #6bc9ff, 0 0 60px #6bffda, 0 0 70px #3bffe5; /* Neon glow */
-    animation: flicker 0.3s infinite alternate; /* Flickering animation */
+    color: #036303;
+    text-shadow: 0 0 10px #2dfcbe, 0 0 20px #51f868, 0 0 30px #6bffb5, 0 0 40px #6bffd3, 0 0 50px #6bc9ff, 0 0 60px #6bffda, 0 0 70px #3bffe5; 
+    animation: flicker 0.3s infinite alternate;
 }
 
 @keyframes flicker {
@@ -53,20 +53,22 @@ body {
     cursor: text;
 }
 
-#search-input {
+#filter-input {
     padding: 12px;
     font-size: 18px;
     border: 2px solid #ccc;
     border-radius: 20px;
     outline: none;
     transition: border-color 0.3s ease;
+    background-image: url(./pexels-henry-&-co-1939485.jpg);
+    background-size: cover;
 }
 
-#search-input:focus {
+#filter-input:focus {
     border-color: #ff6b6b;
 }
 
-#search-button {
+#filter-button {
     padding: 12px 24px;
     font-size: 18px;
     background-color: #ff6b6b;
@@ -77,8 +79,9 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#search-button:hover {
-    background-color: #010030;
+#filter-button:hover {
+    background-color: #7e7cfc;
+    transform: scale(1.1);
 }
 
 /* Breed Select Styles */
@@ -96,7 +99,7 @@ body {
 }
 
 #breed-select:focus {
-    border-color: #6b7bff;
+    border-color: transparent
 }
 
 /* Breed Info Styles */
@@ -129,44 +132,48 @@ body {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transform: scale(1.1);
 }
 
 #details-button:hover {
     background-color: #460101;
 }
 
-
 /* Liked Breeds List Styles */
 #liked-breeds-list {
     margin-top: 20px;
 }
-/* Add this CSS to your existing CSS file or create a new one */
+
 #like-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 24px;
     padding: 12px 24px;
-    color: #ffffff; /* Color for unliked state */
+    color: #ffffff; 
     border-radius: 20px;
-    transition: color 0.3s ease; /* Add transition for color change */
+    transition: color 0.3s ease; 
+}
+
+#like-button:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
 }
 
 #like-button.liked {
-    color: #b40087; /* Change the color when liked */
+    color: #ff6b6b;
 }
 
 h2 {
-    font-family: 'Pacifico', cursive; /* Unique font */
+    font-family: 'Pacifico', cursive;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #034d63; /* Neon color */
+    color: #034d63; 
     text-shadow: 0 0 10px #21ffbc, 0 0 20px #33f8ee, 0 0 30px #0ef2fa, 0 0 40px #4809f5, 0 0 50px #0ba6ff, 0 0 60px #06ecb3, 0 0 70px #09e2c5; /* Neon glow */
-    animation: flicker 1s infinite alternate; /* Flickering animation */
+    animation: flicker 1s infinite alternate; 
 }
 
 /* Additional Styling */
@@ -177,7 +184,6 @@ h2 {
 }
 
 /* Custom Scrollbar */
-/* Works in WebKit/Blink based browsers */
 ::-webkit-scrollbar {
     width: 12px;
 }

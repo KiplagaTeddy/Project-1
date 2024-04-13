@@ -1,11 +1,13 @@
 # Project-1
+
 #### Date, 2024/03/24
 
 #### By *Teddy Kiplagat*
-# Doggy Delight
+
+# Doggy Delight!
 
 ## Description
-Doggy Delight is a web application that allows users to explore different dog breeds. Users can search for breeds, view breed information, and like their favorite breeds.
+Doggy Delight is a web application that allows users to explore different dog breeds. Users can search for breeds, view breed information, and like their favorite breeds.If you're looking to just explore different dog breeds, you can just click on the dropdown menu and select the desired breed and everything about that breed will be available for you including different pictures. Have a particular breed in mind?? Then enter the desired breed in the "search by breed" menu and click on the filter button to only bring the desired breed in the dropdown menu. Fun Isn't it? Knock yourself out with Doggy Delight...a fun application for all you dog lovers!
 
 ## Features
 - Select Breed: Choose a breed from the dropdown list to view information and a random image of that breed.
