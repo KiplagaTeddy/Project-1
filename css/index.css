@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(./pexels-pixabay-459277.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-image: url(./pexels-fwstudio-129731.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styles */
+#title {
+    font-family: 'Pacifico', cursive; /* Unique font */
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #036303; /* Neon color */
+    text-shadow: 0 0 10px #2dfcbe, 0 0 20px #51f868, 0 0 30px #6bffb5, 0 0 40px #6bffd3, 0 0 50px #6bc9ff, 0 0 60px #6bffda, 0 0 70px #3bffe5; /* Neon glow */
+    animation: flicker 0.3s infinite alternate; /* Flickering animation */
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Search Container Styles */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: text;
+}
+
+#search-input {
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #ff6b6b;
+}
+
+#search-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #010030;
+}
+
+/* Breed Select Styles */
+#breed-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    background: linear-gradient(135deg, #ccc, #fff);
+    transition: border-color 0.3s ease;
+    font-style: italic;
+}
+
+#breed-select:focus {
+    border-color: #6b7bff;
+}
+
+/* Breed Info Styles */
+#breed-info {
+    text-align: center;
+}
+
+#dog-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.6;
+    font-family: cursive;
+}
+
+#details-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bolder;
+    background-image: url(./Green\ Grass\ Background\ Mini\ Art\ Print\ by\ TilenHrovatic.jpeg);
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#details-button:hover {
+    background-color: #460101;
+}
+
+
+/* Liked Breeds List Styles */
+#liked-breeds-list {
+    margin-top: 20px;
+}
+/* Add this CSS to your existing CSS file or create a new one */
+#like-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 12px 24px;
+    color: #ffffff; /* Color for unliked state */
+    border-radius: 20px;
+    transition: color 0.3s ease; /* Add transition for color change */
+}
+
+#like-button.liked {
+    color: #b40087; /* Change the color when liked */
+}
+
+h2 {
+    font-family: 'Pacifico', cursive; /* Unique font */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #034d63; /* Neon color */
+    text-shadow: 0 0 10px #21ffbc, 0 0 20px #33f8ee, 0 0 30px #0ef2fa, 0 0 40px #4809f5, 0 0 50px #0ba6ff, 0 0 60px #06ecb3, 0 0 70px #09e2c5; /* Neon glow */
+    animation: flicker 1s infinite alternate; /* Flickering animation */
+}
+
+/* Additional Styling */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Custom Scrollbar */
+/* Works in WebKit/Blink based browsers */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #7dffd8;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #494949;
+    border-radius: 6px;
+}
+
+::-webkit-scroll#000000thumb:hover {
+    background: #000000;
+}
+

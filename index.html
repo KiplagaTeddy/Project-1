@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Doggy Delight</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1 id="title" data-text="Doggy Delight">Doggy Delight</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search by breed...">
+            <button id="search-button">Filter</button>
+        </div>
+        <select id="breed-select">
+            <option value="">Choose a Breed</option>
+        </select>
+        <br><br>
+        <div id="breed-info">
+            <img id="dog-image" src="" alt="">
+            <div id="info">
+                <p id="description"></p>
+                <p id="bred-for"></p>
+                <p id="life-span"></p>
+                <p id="temper"></p>
+                <button id="details-button">Fun Facts</button>
+                <i id="like-button" class="fas fa-heart"></i></div>
+                <br><br>
+                <h2 class="neon">Favourite Breeds</h2> <!-- Added neon subheading -->
+                <ul id="liked-breeds-list"></ul>
+
+        </div>
+    </div>
+    <script src="./assets/index.js"></script>
 </body>
 </html>
